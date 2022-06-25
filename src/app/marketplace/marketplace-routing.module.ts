@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./marketplace/marketplace.module').then(
-        (m) => m.MarketplaceModule
-      ),
+    component: LandingComponent,
     pathMatch: 'full',
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class MarketplaceRoutingModule {}
