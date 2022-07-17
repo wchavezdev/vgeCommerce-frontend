@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col col-md-6 col-lg-4 mx-auto">
+    <!-- Pills navs -->
+    <ul class="nav nav-pills nav-justified mb-3" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/auth/signin']"
+          id="tab-login"
+          role="tab"
+          aria-controls="pills-login"
+          aria-selected="true"
+          >Login
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/auth/signup']"
+          id="tab-register"
+          role="tab"
+          aria-controls="pills-register"
+          aria-selected="false"
+          >Register
+        </a>
+      </li>
+    </ul>
+    <!-- Pills navs -->
+    <div class="tab-content">
+      <router-outlet> </router-outlet>
+    </div>
+  </div>
+</div>
