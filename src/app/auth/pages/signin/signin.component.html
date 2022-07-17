@@ -1,0 +1,87 @@
+<!-- Pills content -->
+<div
+  class="tab-pane fade show"
+  id="pills-login"
+  role="tabpanel"
+  aria-labelledby="tab-login"
+>
+  <form [formGroup]="loginForm" (ngSubmit)="login()" class="w-100">
+    <div class="text-center mb-3">
+      <p>Sign in with:</p>
+
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <fa-icon [icon]="faGoogle"></fa-icon>
+      </button>
+    </div>
+
+    <p class="text-center">or:</p>
+
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="loginName">Email or username</label>
+      <input
+        type="email"
+        id="loginName"
+        class="form-control"
+        formControlName="email"
+      />
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="loginPassword">Password</label>
+      <input
+        type="password"
+        id="loginPassword"
+        class="form-control"
+        formControlName="password"
+      />
+    </div>
+
+    <!-- 2 column grid layout -->
+    <div class="row mb-4">
+      <div class="col-md-6 d-flex justify-content-center">
+        <!-- Checkbox -->
+        <div class="form-check mb-3 mb-md-0">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="loginCheck"
+            checked
+          />
+          <label class="form-check-label" for="loginCheck"> Remember me </label>
+        </div>
+      </div>
+
+      <div class="col-md-6 d-flex justify-content-center">
+        <!-- Simple link -->
+        <a href="#!">Forgot password?</a>
+      </div>
+    </div>
+
+    <!-- Submit button -->
+    <div class="d-grid">
+      <button type="submit" class="btn btn-primary mb-4">
+        <div
+          *ngIf="checking"
+          class="spinner-border spinner-border-sm"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        Sign in
+      </button>
+    </div>
+
+    <!-- Register buttons -->
+    <div class="text-center">
+      <p>Not a member? <a href="#!">Register</a></p>
+    </div>
+  </form>
+</div>
+<!-- Pills content -->

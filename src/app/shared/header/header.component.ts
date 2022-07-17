@@ -1,12 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
+import {
+  faUser,
+  faCartShopping,
+  faSignIn,
+} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  faUser = faUser;
+  faCartShopping = faCartShopping;
+  faSignIn = faSignIn;
+
+  constructor(private auth: AuthService) {}
+
+  get authState() {
+    return this.auth.authState;
+  }
 
   ngOnInit(): void {}
+
+  logout() {
+    this.auth.logout();
+  }
 }
