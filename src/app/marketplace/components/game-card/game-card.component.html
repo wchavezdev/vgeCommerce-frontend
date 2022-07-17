@@ -1,0 +1,10 @@
+<!-- Bootstrap card -->
+<div class="card">
+  <img class="card-img-top" src="{{ game.coverImage }}" alt="{{ game.name }}" />
+  <div class="card-body">
+    <h5 class="card-title">{{ game.name }}</h5>
+    <p class="card-text">{{ game.description }}</p>
+    <p class="card-text">{{ game.price | currency }}</p>
+    <a href="#" class="btn btn-primary">Buy</a>
+  </div>
+</div>
