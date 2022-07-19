@@ -1,19 +1,30 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-import { MarketplaceRoutingModule } from './marketplace-routing.module';
-import { LandingComponent } from './pages/landing/landing.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { GameCardComponent } from './components/game-card/game-card.component';
 
+import { LandingComponent } from './pages/landing/landing.component';
+import { GameComponent } from './pages/game/game.component';
+import { GameSkeletonComponent } from './components/game-skeleton/game-skeleton.component';
+import { RatingComponent } from './components/rating/rating.component';
 
 @NgModule({
   declarations: [
     LandingComponent,
-    GameCardComponent
+    GameCardComponent,
+    GameComponent,
+    GameSkeletonComponent,
+    RatingComponent,
   ],
   imports: [
     CommonModule,
-    MarketplaceRoutingModule
-  ]
+    RouterModule,
+    NgxSkeletonLoaderModule,
+    FontAwesomeModule,
+  ],
 })
-export class MarketplaceModule { }
+export class MarketplaceModule {}

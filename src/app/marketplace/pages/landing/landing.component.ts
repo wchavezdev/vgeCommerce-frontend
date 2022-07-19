@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { games as sampleGames } from '../../data/games';
-import { Game } from '../../interfaces/Game';
+
+import { Game } from '../../../games/interfaces';
+
+import { games as sampleGames } from '../../../games/data/games';
 
 @Component({
   selector: 'app-landing',

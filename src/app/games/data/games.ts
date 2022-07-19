@@ -1,4 +1,4 @@
-import { Game } from '../interfaces/Game';
+import { Game } from '../../games/interfaces';
 
 export const games: Game[] = [
   {
@@ -8,11 +8,12 @@ export const games: Game[] = [
       "Tom Clancy's Rainbow Six® Siege features evolving gameplay and limitless strategic options to lead your team to victory.",
     price: 19.99,
     coverImage: 'assets/covers/rainbow-six-siege.jpeg',
-    rating: 4.6,
-    releaseDate: '12/01/15',
+    rating: 2.6,
+    releaseDate: new Date('12/01/15'),
     developer: 'Ubisoft',
     publisher: 'Ubisoft',
-    platforms: ['PC', 'PS4', 'XBOX One'],
+    platforms: ['PC'],
+    tags: ['Action', 'Strategy', 'Shooter'],
   },
   {
     id: 2,
@@ -22,10 +23,11 @@ export const games: Game[] = [
     price: 23.99,
     coverImage: 'assets/covers/assassins-creed-valhalla.jpeg',
     rating: 4.6,
-    releaseDate: '11/17/20',
+    releaseDate: new Date('11/17/20'),
     developer: 'Ubisoft Montreal',
     publisher: 'Ubisoft',
-    platforms: ['PC', 'PS4', 'XBOX One'],
+    platforms: ['PC'],
+    tags: ['Action', 'RPG', 'Open World'],
   },
   {
     id: 3,
@@ -35,10 +37,11 @@ export const games: Game[] = [
     price: 31.99,
     coverImage: 'assets/covers/god-of-war.jpeg',
     rating: 4.9,
-    releaseDate: '01/14/22',
+    releaseDate: new Date('01/14/22'),
     developer: 'Santa Monica Studio',
     publisher: 'PlayStation PC LLC',
-    platforms: ['PC', 'PS4', 'XBOX One'],
+    platforms: ['PC'],
+    tags: ['Action', 'RPG', 'Adventure'],
   },
   {
     id: 4,
@@ -48,10 +51,11 @@ export const games: Game[] = [
     price: 5.39,
     coverImage: 'assets/covers/ruggnar.jpeg',
     rating: 4.1,
-    releaseDate: '06/23/22',
+    releaseDate: new Date('06/23/22'),
     developer: "Sword N' Wands",
     publisher: 'PID Games',
     platforms: ['PC'],
+    tags: ['Action-Adventure'],
   },
   {
     id: 5,
@@ -61,10 +65,11 @@ export const games: Game[] = [
     price: 13.99,
     coverImage: 'assets/covers/the-caligula-effect-2.jpeg',
     rating: 4.1,
-    releaseDate: '06/22/22',
+    releaseDate: new Date('06/22/22'),
     developer: 'historia Inc. / FURYU Corporation.',
     publisher: 'historia Inc.',
     platforms: ['PC'],
+    tags: ['RPG'],
   },
   {
     id: 6,
@@ -74,9 +79,16 @@ export const games: Game[] = [
     price: 23.99,
     coverImage: 'assets/covers/genshin-impact.jpeg',
     rating: 4.1,
-    releaseDate: '06/08/21',
+    releaseDate: new Date('06/08/21'),
     developer: 'COGNOSPHERE PTE. LTD.',
     publisher: 'COGNOSPHERE PTE. LTD.',
     platforms: ['PC'],
+    tags: ['RPG', 'Adventure', 'Open World'],
+    gamePlayImages: [
+      'assets/gameplays/genshin-impact/image1.jpeg',
+      'assets/gameplays/genshin-impact/image2.jpeg',
+      'assets/gameplays/genshin-impact/image3.jpeg',
+      'assets/gameplays/genshin-impact/image4.jpeg',
+    ],
   },
 ];
