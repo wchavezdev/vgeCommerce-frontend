@@ -1,0 +1,110 @@
+<app-game-skeleton *ngIf="loading; else gameInfo"></app-game-skeleton>
+
+<ng-template #gameInfo>
+  <div class="d-flex justify-content-between align-items-start">
+    <div>
+      <h1>{{ game.name }}</h1>
+      <div class="d-flex align-items-center gap-2">
+        <app-rating [rating]="game.rating"></app-rating>
+        <span class="badge bg-secondary">{{ game.rating }}</span>
+      </div>
+    </div>
+    <a href="/" class="btn btn-outline-secondary">
+      <fa-icon [icon]="faArrowLeft"></fa-icon>
+      <span class="d-none d-md-inline ms-2">Regresar</span>
+    </a>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-8">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div
+            *ngFor="let image of game.gamePlayImages; let i = index"
+            class="carousel-item"
+            [ngClass]="{ active: i === 0 }"
+          >
+            <img
+              src="{{ image }}"
+              class="d-block w-100"
+              alt="{{ game.name }}"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="mb-2">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-secondary">25%</span>
+          <span>${{ game.price }}</span>
+        </div>
+      </div>
+      <div class="d-grid gap-2 mb-2">
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-outline-primary">Add to cart</button>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="d-flex align-items-baseline justify-content-between">
+            <span>Developer</span>
+            <span>{{ game.developer }}</span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="d-flex align-items-baseline justify-content-between">
+            <span>Publisher</span>
+            <span>{{ game.publisher }}</span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="d-flex align-items-baseline justify-content-between">
+            <span>Fecha de Lanzamiento</span>
+            <span>{{ game.releaseDate | date }}</span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="d-flex align-items-baseline justify-content-between">
+            <span>Platforms</span>
+            <span>{{ game.platforms.join(' ') }}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <div class="d-flex align-items-center gap-2 mb-4">
+      <span
+        *ngFor="let tag of game.tags"
+        class="badge rounded-pill text-bg-secondary"
+      >
+        {{ tag }}
+      </span>
+    </div>
+
+    <p>{{ game.description }}</p>
+  </div>
+</ng-template>

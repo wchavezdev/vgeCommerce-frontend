@@ -1,18 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { LandingComponent } from './marketplace/pages/landing/landing.component';
+import { GameComponent } from './marketplace/pages/game/game.component';
+
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./marketplace/marketplace.module').then(
-        (m) => m.MarketplaceModule
-      ),
+    component: LandingComponent,
     pathMatch: 'full',
   },
   {
+    path: 'game/:id',
+    component: GameComponent,
+  },
+  {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+    loadChildren: () =>
+      import(/* webpackChunkName: "auth" */ './auth/auth.module').then(
+        (m) => m.AuthModule
+      ),
+  },
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];
 

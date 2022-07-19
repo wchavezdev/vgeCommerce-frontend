@@ -8,7 +8,7 @@ export const games: Game[] = [
       "Tom Clancy's Rainbow Six® Siege features evolving gameplay and limitless strategic options to lead your team to victory.",
     price: 19.99,
     coverImage: 'assets/covers/rainbow-six-siege.jpeg',
-    rating: 4.6,
+    rating: 2.6,
     releaseDate: new Date('12/01/15'),
     developer: 'Ubisoft',
     publisher: 'Ubisoft',
@@ -84,5 +84,11 @@ export const games: Game[] = [
     publisher: 'COGNOSPHERE PTE. LTD.',
     platforms: ['PC'],
     tags: ['RPG', 'Adventure', 'Open World'],
+    gamePlayImages: [
+      'assets/gameplays/genshin-impact/image1.jpeg',
+      'assets/gameplays/genshin-impact/image2.jpeg',
+      'assets/gameplays/genshin-impact/image3.jpeg',
+      'assets/gameplays/genshin-impact/image4.jpeg',
+    ],
   },
 ];

@@ -3,6 +3,7 @@ export interface Game {
   name: string;
   description?: string;
   coverImage: string;
+  gamePlayImages?: string[];
   releaseDate: Date;
   publisher: string;
   developer: string;
