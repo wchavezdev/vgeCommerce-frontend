@@ -1,4 +1,4 @@
-import { User } from 'src/app/users/interfaces';
+import { User } from '../../users/interfaces';
 
 export interface AuthState {
   checking: boolean;
