@@ -1,0 +1,45 @@
+<h1>Lista de Juegos</h1>
+
+<div>
+  <button class="btn btn-primary" routerLink="/games/add">Agregar Juego</button>
+</div>
+
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Cover</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Editor</th>
+      <th scope="col">Lanzamiento</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let game of games">
+      <th scope="row">{{ game.id }}</th>
+      <td>{{ game.name }}</td>
+      <td>
+        <img src="{{ game.coverImage }}" alt="{{ game.name }}" width="100" />
+      </td>
+      <td>{{ game.description }}</td>
+      <td>{{ game.publisher }}</td>
+      <td>{{ game.releaseDate | date }}</td>
+      <td>{{ game.price }}</td>
+      <td>{{ game.rating }}</td>
+      <td>
+        <div class="d-flex align-items-center gap-2">
+          <a class="btn btn-primary" [routerLink]="['/games/edit', game.id]">
+            <fa-icon [icon]="faPenToSquare"></fa-icon>
+          </a>
+          <button class="btn btn-danger">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

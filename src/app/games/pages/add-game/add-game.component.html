@@ -1,0 +1,108 @@
+<h1>
+  {{ isAdding ? 'Nuevo Juego' : 'Editar Juego' }}
+</h1>
+
+<!-- game form -->
+<div class="row">
+  <div class="col-md-8">
+    <form [formGroup]="gameForm">
+      <div class="form-group mb-2">
+        <label for="name">Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          formControlName="name"
+        />
+      </div>
+      <div class="form-group mb-2">
+        <label for="description">Descripción:</label>
+        <textarea
+          rows="2"
+          class="form-control"
+          id="description"
+          formControlName="description"
+        ></textarea>
+      </div>
+      <div class="form-group mb-2">
+        <label for="coverImage">Foto de portada:</label>
+        <input
+          type="file"
+          class="form-control"
+          id="coverImage"
+          formControlName="coverImage"
+        />
+      </div>
+      <div class="form-group mb-2">
+        <label for="gamePlayImages">Imágenes para slider:</label>
+        <input
+          class="form-control"
+          type="file"
+          id="gamePlayImages"
+          formArrayName="gamePlayImages"
+          multiple
+        />
+      </div>
+      <div class="form-group mb-2">
+        <label for="releaseDate">Fecha de lanzamiento:</label>
+        <input
+          type="date"
+          class="form-control"
+          id="releaseDate"
+          formControlName="releaseDate"
+        />
+      </div>
+      <div class="form-group mb-2">
+        <label for="publisher">Editor:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="publisher"
+          formControlName="publisher"
+        />
+      </div>
+      <div class="form-group mb-2">
+        <label for="developer">Desarrollador:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="developer"
+          formControlName="developer"
+        />
+      </div>
+      <div class="form-group mb-2">
+        <label for="price">Precio:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="price"
+          formControlName="price"
+        />
+      </div>
+      <div class="form-group mb-2">
+        <label for="developer">Tags:</label>
+        <ng-select
+          [multiple]="true"
+          formControlName="cars"
+          placeholder="Seleccionar"
+        >
+          <ng-option *ngFor="let tag of tags" [value]="tag.id">{{
+            tag.name
+          }}</ng-option>
+        </ng-select>
+      </div>
+      <div class="form-group mb-2">
+        <label for="developer">Platforms:</label>
+        <ng-select
+          [multiple]="true"
+          formControlName="cars"
+          placeholder="Seleccionar"
+        >
+          <ng-option *ngFor="let platform of platforms" [value]="platform.id">{{
+            platform.name
+          }}</ng-option>
+        </ng-select>
+      </div>
+    </form>
+  </div>
+</div>

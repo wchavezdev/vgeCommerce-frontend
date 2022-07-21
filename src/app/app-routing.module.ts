@@ -22,6 +22,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'games',
+    loadChildren: () =>
+      import(/* webpackChunkName: "games" */ './games/games.module').then(
+        (m) => m.GamesModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

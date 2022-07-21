@@ -24,6 +24,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@ng-select/ng-select": "^9.0.2",
     "bootstrap": "^5.2.0-beta1",
     "firebase": "^9.9.0",
     "ngx-skeleton-loader": "^5.0.0",
