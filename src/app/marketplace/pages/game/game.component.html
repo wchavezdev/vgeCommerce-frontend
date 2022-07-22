@@ -9,7 +9,7 @@
         <span class="badge bg-secondary">{{ game.rating }}</span>
       </div>
     </div>
-    <a href="/" class="btn btn-outline-secondary">
+    <a routerLink="/" class="btn btn-outline-secondary">
       <fa-icon [icon]="faArrowLeft"></fa-icon>
       <span class="d-none d-md-inline ms-2">Regresar</span>
     </a>
@@ -59,12 +59,20 @@
       <div class="mb-2">
         <div class="d-flex align-items-center gap-2">
           <span class="badge bg-secondary">25%</span>
-          <span>${{ game.price }}</span>
+          <span>{{ game.price | currency }}</span>
         </div>
       </div>
       <div class="d-grid gap-2 mb-2">
-        <button class="btn btn-primary">Buy Now</button>
-        <button class="btn btn-outline-primary">Add to cart</button>
+        <button class="btn btn-primary">
+          Buy Now
+          <fa-icon [icon]="faCreditCard"></fa-icon>
+        </button>
+        <button class="btn btn-outline-primary" (click)="handleCart()">
+          {{ isGameInCart ? 'Remove from Cart' : 'Add to Cart' }}
+          <fa-icon
+            [icon]="isGameInCart ? faCartArrowDown : faCartPlus"
+          ></fa-icon>
+        </button>
       </div>
       <ul class="list-group">
         <li class="list-group-item">

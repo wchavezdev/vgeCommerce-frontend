@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowLeft,
+  faCartPlus,
+  faCartArrowDown,
+  faCreditCard,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { GamesService } from '../../../games/services';
+import { ShoppingCartService } from '../../../cart/services';
 
 import { Game } from '../../../games/interfaces';
 
@@ -14,6 +20,9 @@ import { Game } from '../../../games/interfaces';
 })
 export class GameComponent implements OnInit {
   faArrowLeft = faArrowLeft;
+  faCartPlus = faCartPlus;
+  faCartArrowDown = faCartArrowDown;
+  faCreditCard = faCreditCard;
 
   game!: Game;
   loading = true;
@@ -21,7 +30,8 @@ export class GameComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private gamesService: GamesService
+    private gamesService: GamesService,
+    private shoppingCartService: ShoppingCartService
   ) {}
 
   ngOnInit(): void {
@@ -35,5 +45,17 @@ export class GameComponent implements OnInit {
         this.router.navigate(['/']);
       }
     });
+  }
+
+  get isGameInCart() {
+    return this.shoppingCartService.isItemInCart(+this.game.id);
+  }
+
+  handleCart() {
+    if (this.isGameInCart) {
+      this.shoppingCartService.removeFromCart(+this.game.id);
+    } else {
+      this.shoppingCartService.addToCart(this.game);
+    }
   }
 }

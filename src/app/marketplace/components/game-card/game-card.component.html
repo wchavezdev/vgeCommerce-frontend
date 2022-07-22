@@ -1,15 +1,31 @@
 <!-- Bootstrap card -->
 <div class="card">
-  <a [routerLink]="['/game', game.id]"
-    ><img
+  <a [routerLink]="['/game', game.id]">
+    <img
       class="card-img-top"
       src="{{ game.coverImage }}"
       alt="{{ game.name }}"
-  /></a>
+    />
+  </a>
   <div class="card-body">
     <h5 class="card-title">{{ game.name }}</h5>
-    <p class="card-text">{{ game.description }}</p>
-    <p class="card-text">{{ game.price | currency }}</p>
-    <a href="#" class="btn btn-primary">Buy</a>
+
+    <div class="d-flex align-items-center gap-2 mb-2">
+      <span class="badge bg-primary">25%</span>
+      <span class="fw-bold">{{ game.price | currency }}</span>
+    </div>
+
+    <div class="d-flex align-items-center gap-2 mb-4">
+      <span
+        *ngFor="let tag of game.tags"
+        class="badge rounded-pill text-bg-secondary"
+      >
+        {{ tag }}
+      </span>
+    </div>
+
+    <div class="d-grid gap-2">
+      <a [routerLink]="['/game', game.id]" class="btn btn-info">More Info</a>
+    </div>
   </div>
 </div>

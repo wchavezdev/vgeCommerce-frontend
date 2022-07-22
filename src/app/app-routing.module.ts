@@ -15,6 +15,10 @@ const routes: Routes = [
     component: GameComponent,
   },
   {
+    path: 'cart',
+    loadChildren: () => import('./cart/cart.module').then((m) => m.CartModule),
+  },
+  {
     path: 'auth',
     loadChildren: () =>
       import(/* webpackChunkName: "auth" */ './auth/auth.module').then(
