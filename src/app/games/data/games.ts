@@ -14,7 +14,29 @@ export const games: Game[] = [
     publisher: 'Ubisoft',
     platforms: ['PC'],
     tags: ['Action', 'Strategy', 'Shooter'],
+    gamePlayImages: [
+      'assets/gameplays/rainbow-six-siege/image1.jpg',
+      'assets/gameplays/rainbow-six-siege/image2.jpg',
+      'assets/gameplays/rainbow-six-siege/image3.jpg',
+      'assets/gameplays/rainbow-six-siege/image4.jpg',
+      'assets/gameplays/rainbow-six-siege/image5.jpg',
+      'assets/gameplays/rainbow-six-siege/image6.jpg',
+      'assets/gameplays/rainbow-six-siege/image7.jpg',
+      'assets/gameplays/rainbow-six-siege/image8.jpg',
+      'assets/gameplays/rainbow-six-siege/image9.jpg',
+      'assets/gameplays/rainbow-six-siege/image10.jpg',
+      'assets/gameplays/rainbow-six-siege/image11.jpg',
+      'assets/gameplays/rainbow-six-siege/image12.jpg',
+      'assets/gameplays/rainbow-six-siege/image13.jpg',
+      'assets/gameplays/rainbow-six-siege/image14.jpg',
+      'assets/gameplays/rainbow-six-siege/image15.jpg',
+      'assets/gameplays/rainbow-six-siege/image16.jpg',
+      'assets/gameplays/rainbow-six-siege/image17.jpg',
+      
+    ],
+
   },
+
   {
     id: 2,
     name: "Assassin's Creed® Valhalla",
@@ -28,6 +50,9 @@ export const games: Game[] = [
     publisher: 'Ubisoft',
     platforms: ['PC'],
     tags: ['Action', 'RPG', 'Open World'],
+    gamePlayImages: [
+      'assets/gameplays/assassins-creed®-valhalla/image1.jpg',
+    ],
   },
   {
     id: 3,
@@ -42,6 +67,19 @@ export const games: Game[] = [
     publisher: 'PlayStation PC LLC',
     platforms: ['PC'],
     tags: ['Action', 'RPG', 'Adventure'],
+    gamePlayImages: [
+      'assets/gameplays/god-of-war/image1.jpg',
+      'assets/gameplays/god-of-war/image2.jpg',
+      'assets/gameplays/god-of-war/image3.jpg',
+      'assets/gameplays/god-of-war/image4.webp',
+      'assets/gameplays/god-of-war/image5.jpg',
+      'assets/gameplays/god-of-war/image6.jpg',
+      'assets/gameplays/god-of-war/image7.jpg',
+      'assets/gameplays/god-of-war/image8.jpg',
+      'assets/gameplays/god-of-war/image9.jpg',
+      'assets/gameplays/god-of-war/image10.jpg',
+    ],
+
   },
   {
     id: 4,
@@ -56,6 +94,19 @@ export const games: Game[] = [
     publisher: 'PID Games',
     platforms: ['PC'],
     tags: ['Action-Adventure'],
+    gamePlayImages: [
+      'assets/gameplays/ruggnar/image1.jpg',
+      'assets/gameplays/ruggnar/image2.jpg',
+      'assets/gameplays/ruggnar/image3.jpg',
+      'assets/gameplays/ruggnar/image4.jpg',
+      'assets/gameplays/ruggnar/image5.jpg',
+      'assets/gameplays/ruggnar/image6.jpg',
+      'assets/gameplays/ruggnar/image7.jpg',
+      'assets/gameplays/ruggnar/image8.jpg',
+      'assets/gameplays/ruggnar/image9.jpg',
+      
+    ],
+    
   },
   {
     id: 5,
@@ -70,6 +121,15 @@ export const games: Game[] = [
     publisher: 'historia Inc.',
     platforms: ['PC'],
     tags: ['RPG'],
+    gamePlayImages: [
+      'assets/gameplays/the-caligula-effect-2/image1.jpg',
+      'assets/gameplays/the-caligula-effect-2/image2.jpg',
+      'assets/gameplays/the-caligula-effect-2/image3.jpg',
+      'assets/gameplays/the-caligula-effect-2/image4.jpg',
+      'assets/gameplays/the-caligula-effect-2/image5.jpg',
+      
+    ],
+    
   },
   {
     id: 6,
@@ -90,5 +150,6 @@ export const games: Game[] = [
       'assets/gameplays/genshin-impact/image3.jpeg',
       'assets/gameplays/genshin-impact/image4.jpeg',
     ],
+
   },
 ];
