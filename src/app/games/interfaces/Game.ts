@@ -27,3 +27,11 @@ export interface GameDeal {
   discount: number;
   deadline: Date;
 }
+
+interface GameProperty {
+  id: number;
+  name: string;
+}
+
+export interface GameTag extends GameProperty {}
+export interface GamePlatform extends GameProperty {}
