@@ -64,11 +64,17 @@
       </div>
       <div class="d-grid gap-2 mb-2">
         <button class="btn btn-primary">
-          Buy Now
+          Comprar Ahora
           <fa-icon [icon]="faCreditCard"></fa-icon>
         </button>
-        <button class="btn btn-outline-primary" (click)="handleCart()">
-          {{ isGameInCart ? 'Remove from Cart' : 'Add to Cart' }}
+        <button
+          class="btn btn-outline-primary"
+          [ngClass]="{
+            'btn-outline-danger': isGameInCart
+          }"
+          (click)="handleCart()"
+        >
+          {{ isGameInCart ? 'Quitar del Carrito' : 'Añadir al Carrito' }}
           <fa-icon
             [icon]="isGameInCart ? faCartArrowDown : faCartPlus"
           ></fa-icon>
@@ -83,7 +89,7 @@
         </li>
         <li class="list-group-item">
           <div class="d-flex align-items-baseline justify-content-between">
-            <span>Publisher</span>
+            <span>Editor</span>
             <span>{{ game.publisher }}</span>
           </div>
         </li>
@@ -95,7 +101,7 @@
         </li>
         <li class="list-group-item">
           <div class="d-flex align-items-baseline justify-content-between">
-            <span>Platforms</span>
+            <span>Plataformas</span>
             <span>{{ game.platforms.join(' ') }}</span>
           </div>
         </li>
