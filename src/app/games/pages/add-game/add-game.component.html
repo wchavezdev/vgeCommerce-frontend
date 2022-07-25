@@ -17,25 +17,38 @@
     <div class="col-md-8">
       <form [formGroup]="gameForm" (ngSubmit)="submit()">
         <div class="form-group mb-2">
-          <label for="name">Nombre:</label>
+          <label class="form-label" for="name">Nombre:</label>
           <input
             type="text"
             class="form-control"
             id="name"
             formControlName="name"
+            placeholder="Ej: Fornite"
+            [ngClass]="{ 'is-invalid': hasError('name', 'required') }"
           />
+          <div *ngIf="hasError('name', 'required')" class="invalid-feedback">
+            El nombre es requerido
+          </div>
         </div>
         <div class="form-group mb-2">
-          <label for="description">Descripción:</label>
+          <label class="form-label" for="description">Descripción:</label>
           <textarea
             rows="2"
             class="form-control"
             id="description"
             formControlName="description"
+            placeholder="Ej: Juego de acción"
+            [ngClass]="{ 'is-invalid': hasError('description', 'required') }"
           ></textarea>
+          <div
+            *ngIf="hasError('description', 'required')"
+            class="invalid-feedback"
+          >
+            La descripción es requerida
+          </div>
         </div>
         <div class="form-group mb-2">
-          <label for="coverImage">Foto de portada:</label>
+          <label class="form-label" for="coverImage">Foto de portada:</label>
           <input
             type="file"
             class="form-control"
@@ -44,7 +57,9 @@
           />
         </div>
         <div class="form-group mb-2">
-          <label for="gamePlayImages">Imágenes para slider:</label>
+          <label class="form-label" for="gamePlayImages">
+            Imágenes para slider:
+          </label>
           <input
             class="form-control"
             type="file"
@@ -54,13 +69,22 @@
           />
         </div>
         <div class="form-group mb-2">
-          <label for="releaseDate">Fecha de lanzamiento:</label>
+          <label class="form-label" for="releaseDate">
+            Fecha de lanzamiento:
+          </label>
           <input
             type="date"
             class="form-control"
             id="releaseDate"
             formControlName="releaseDate"
+            [ngClass]="{ 'is-invalid': hasError('releaseDate', 'required') }"
           />
+          <div
+            *ngIf="hasError('releaseDate', 'required')"
+            class="invalid-feedback"
+          >
+            La fecha de lanzamiento es requerida
+          </div>
         </div>
         <div class="form-group mb-2">
           <label for="publisher">Editor:</label>
@@ -69,50 +93,69 @@
             class="form-control"
             id="publisher"
             formControlName="publisher"
+            placeholder="Ej: Ubisoft"
+            [ngClass]="{ 'is-invalid': hasError('publisher', 'required') }"
           />
+          <div
+            *ngIf="hasError('publisher', 'required')"
+            class="invalid-feedback"
+          >
+            El editor es requerido
+          </div>
         </div>
         <div class="form-group mb-2">
-          <label for="developer">Desarrollador:</label>
+          <label class="form-label" for="developer">Desarrollador:</label>
           <input
             type="text"
             class="form-control"
             id="developer"
             formControlName="developer"
+            placeholder="Ej: Ubisoft"
+            [ngClass]="{ 'is-invalid': hasError('developer', 'required') }"
           />
+          <div
+            *ngIf="hasError('developer', 'required')"
+            class="invalid-feedback"
+          >
+            El desarrollador es requerido
+          </div>
         </div>
         <div class="form-group mb-2">
-          <label for="price">Precio:</label>
+          <label class="form-label" for="price">Precio:</label>
           <input
             type="number"
             class="form-control"
             id="price"
             formControlName="price"
+            placeholder="Ej: 100"
+            [ngClass]="{ 'is-invalid': hasError('price', 'required') }"
           />
+          <div *ngIf="hasError('price', 'required')" class="invalid-feedback">
+            El precio es requerido
+          </div>
         </div>
         <div class="form-group mb-2">
-          <label for="developer">Tags:</label>
+          <label class="form-label" for="developer">Tags:</label>
           <ng-select
             [multiple]="true"
             formControlName="tags"
             placeholder="Seleccionar"
           >
-            <ng-option *ngFor="let tag of tags" [value]="tag.id">{{
-              tag.name
-            }}</ng-option>
+            <ng-option *ngFor="let tag of tags" [value]="tag.id">
+              {{ tag.name }}
+            </ng-option>
           </ng-select>
         </div>
         <div class="form-group mb-4">
-          <label for="developer">Platforms:</label>
+          <label class="form-label" for="developer">Platforms:</label>
           <ng-select
             [multiple]="true"
             formControlName="platforms"
             placeholder="Seleccionar"
           >
-            <ng-option
-              *ngFor="let platform of platforms"
-              [value]="platform.id"
-              >{{ platform.name }}</ng-option
-            >
+            <ng-option *ngFor="let platform of platforms" [value]="platform.id">
+              {{ platform.name }}
+            </ng-option>
           </ng-select>
         </div>
 

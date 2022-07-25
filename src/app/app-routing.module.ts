@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LandingComponent } from './marketplace/pages/landing/landing.component';
 import { GameComponent } from './marketplace/pages/game/game.component';
+import { VerifySessionGuard } from './auth/guards/verify-session.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +17,11 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    loadChildren: () => import('./cart/cart.module').then((m) => m.CartModule),
+    loadChildren: () =>
+      import(
+        /* webpackChunkName: "cart" */
+        './cart/cart.module'
+      ).then((m) => m.CartModule),
   },
   {
     path: 'auth',
@@ -31,6 +36,8 @@ const routes: Routes = [
       import(/* webpackChunkName: "games" */ './games/games.module').then(
         (m) => m.GamesModule
       ),
+    canLoad: [VerifySessionGuard],
+    canActivate: [VerifySessionGuard],
   },
   {
     path: '**',
