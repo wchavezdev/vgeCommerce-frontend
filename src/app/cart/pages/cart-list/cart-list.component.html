@@ -1,9 +1,7 @@
 <h1>Shopping Cart</h1>
 
-<div class="row g-4 mt-4">
+<div class="row mt-4">
   <div class="col-md-8">
-    <app-empty-cart *ngIf="items.length === 0"></app-empty-cart>
-
     <div class="list-group list-group-flush">
       <div *ngFor="let item of items" class="list-group-item">
         <div class="row">

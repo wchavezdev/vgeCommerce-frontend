@@ -32,7 +32,9 @@ export const games: Game[] = [
       'assets/gameplays/rainbow-six-siege/image15.jpg',
       'assets/gameplays/rainbow-six-siege/image16.jpg',
       'assets/gameplays/rainbow-six-siege/image17.jpg',
+      
     ],
+
   },
 
   {
@@ -48,7 +50,9 @@ export const games: Game[] = [
     publisher: 'Ubisoft',
     platforms: ['PC'],
     tags: ['Action', 'RPG', 'Open World'],
-    gamePlayImages: ['assets/gameplays/assassins-creed-valhalla/image1.jpg'],
+    gamePlayImages: [
+      'assets/gameplays/assassins-creed®-valhalla/image1.jpg',
+    ],
   },
   {
     id: 3,
@@ -75,6 +79,7 @@ export const games: Game[] = [
       'assets/gameplays/god-of-war/image9.jpg',
       'assets/gameplays/god-of-war/image10.jpg',
     ],
+
   },
   {
     id: 4,
@@ -99,7 +104,9 @@ export const games: Game[] = [
       'assets/gameplays/ruggnar/image7.jpg',
       'assets/gameplays/ruggnar/image8.jpg',
       'assets/gameplays/ruggnar/image9.jpg',
+      
     ],
+    
   },
   {
     id: 5,
@@ -120,7 +127,9 @@ export const games: Game[] = [
       'assets/gameplays/the-caligula-effect-2/image3.jpg',
       'assets/gameplays/the-caligula-effect-2/image4.jpg',
       'assets/gameplays/the-caligula-effect-2/image5.jpg',
+      
     ],
+    
   },
   {
     id: 6,
@@ -141,5 +150,6 @@ export const games: Game[] = [
       'assets/gameplays/genshin-impact/image3.jpeg',
       'assets/gameplays/genshin-impact/image4.jpeg',
     ],
+
   },
 ];

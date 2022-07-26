@@ -18,9 +18,7 @@ export class GameListComponent implements OnInit {
     return this.gamesService.games;
   }
 
-  ngOnInit(): void {
-    console.log(this.games);
-  }
+  ngOnInit(): void {}
 
   delete(gameId: number) {
     alert('Está seguro de eliminar el juego?');
