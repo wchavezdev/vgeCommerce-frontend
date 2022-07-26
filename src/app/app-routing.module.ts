@@ -40,6 +40,13 @@ const routes: Routes = [
     canActivate: [VerifySessionGuard],
   },
   {
+    path: 'contact',
+    loadChildren: () =>
+      import(/* webpackChunkName: "contact" */ './contact/contact.module').then(
+        (m) => m.ContactModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: '',
   },
