@@ -1,0 +1,125 @@
+<div
+  *ngIf="submitted; else contactFormContent"
+  class="d-flex flex-column align-items-center justify-content-center"
+>
+  <img src="assets/illustrations/contact.svg" alt="Contacto" />
+  <p class="mt-4">Nos pondremos en contacto contigo lo antes posible</p>
+</div>
+
+<ng-template #contactFormContent>
+  <div class="d-flex justify-content-between align-items-start">
+    <h1>¿Cómo podemos ayudarte?</h1>
+  </div>
+
+  <!-- game form -->
+  <div class="row">
+    <div class="col-md-8">
+      <form
+        [formGroup]="contactForm"
+        (ngSubmit)="submit()"
+        autocomplete="off"
+        novalidate
+      >
+        <div class="form-group mb-2">
+          <label class="form-label" for="fullName">Nombre completo:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            formControlName="fullName"
+            [ngClass]="{ 'is-invalid': hasError('fullName') }"
+          />
+          <div *ngIf="hasError('fullName')" class="invalid-feedback">
+            <span>{{ getErrorMessage('fullName') }}</span>
+          </div>
+        </div>
+
+        <div class="form-group mb-2">
+          <label class="form-label" for="cellphone1">Celular 1:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cellphone1"
+            formControlName="cellphone1"
+            [ngClass]="{ 'is-invalid': hasError('cellphone1') }"
+            maxlength="10"
+          />
+          <div *ngIf="hasError('cellphone1')" class="invalid-feedback">
+            <span>{{ getErrorMessage('cellphone1') }}</span>
+          </div>
+        </div>
+
+        <div class="form-group mb-2">
+          <label class="form-label" for="cellphone2"
+            >Celular 2 (Opcional):</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="cellphone2"
+            formControlName="cellphone2"
+            [ngClass]="{ 'is-invalid': hasError('cellphone2') }"
+            maxlength="10"
+          />
+          <div *ngIf="hasError('cellphone2')" class="invalid-feedback">
+            <span>{{ getErrorMessage('cellphone2') }}</span>
+          </div>
+        </div>
+
+        <div class="form-group mb-2">
+          <label class="form-label" for="email">Email:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            formControlName="email"
+            [ngClass]="{ 'is-invalid': hasError('email') }"
+          />
+          <div *ngIf="hasError('email')" class="invalid-feedback">
+            <span>{{ getErrorMessage('email') }}</span>
+          </div>
+        </div>
+
+        <div class="form-group mb-2">
+          <label class="form-label" for="message">Mensaje:</label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="message"
+            rows="3"
+            formControlName="message"
+            [ngClass]="{ 'is-invalid': hasError('message') }"
+          ></textarea>
+          <div *ngIf="hasError('message')" class="invalid-feedback">
+            <span>{{ getErrorMessage('message') }}</span>
+          </div>
+        </div>
+
+        <div class="form-group mb-2">
+          <label class="form-label" for="attachment">Adjunto (Opcional):</label>
+          <input
+            type="file"
+            class="form-control"
+            id="attachment"
+            formControlName="attachment"
+            [ngClass]="{ 'is-invalid': hasError('attachment') }"
+          />
+          <div *ngIf="hasError('attachment')" class="invalid-feedback">
+            <span>{{ getErrorMessage('attachment') }}</span>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-4">
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <img src="assets/illustrations/contact.svg" alt="Contacto" />
+        <p class="mt-4">Nos pondremos en contacto contigo lo antes posible</p>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -5,6 +5,7 @@ import {
   faUser,
   faCartShopping,
   faSignIn,
+  faMessage,
 } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-header',
@@ -15,6 +16,7 @@ export class HeaderComponent implements OnInit {
   faUser = faUser;
   faCartShopping = faCartShopping;
   faSignIn = faSignIn;
+  faMessage = faMessage;
 
   constructor(private auth: AuthService) {}
 
