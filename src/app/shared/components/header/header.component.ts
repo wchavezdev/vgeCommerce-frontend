@@ -5,6 +5,7 @@ import {
   faUser,
   faCartShopping,
   faSignIn,
+  faSignOut
 } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-header',
